@@ -6,6 +6,8 @@ let currentContent = document.querySelector('.current-content');
 
 let currentOperand = '';
 let previousOperand = '';
+let secondNumber = '';
+let operandArray = [];
 
 const isNumber = (number) => {
     if(isNaN(number))
@@ -25,9 +27,27 @@ btns.forEach(btn => {
         currentContent.textContent += currentOperand;
         
         operators.forEach(operator => {
-            operator.addEventListener('click', () => {
+            operator.addEventListener('click', (e) => {
 
-               operator.classList.add("show")
+                operator.classList.add('active')
+
+                let temp = '';
+                temp = currentOperand;
+                previousOperand = temp;
+                currentOperand = '';
+                
+                if (currentContent.textContent !== '')
+                {
+                    currentContent.textContent = '';
+                }
+
+                currentOperand += currentOperand;
+                currentContent.textContent += currentOperand;
+                
+                secondNumber = currentContent.textContent.toString();
+                console.log(currentContent)
+
+                
 
                 let operatorValue = operator.textContent;
 
@@ -49,8 +69,10 @@ btns.forEach(btn => {
             })
         })
         // Check if the current content has an operator
-    
-
+        
+        console.log(previousOperand)
+        console.log(currentOperand);
+        console.log(secondNumber)
     })
 })
 
