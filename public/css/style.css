@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+}
+
+:root {
+    /* Colours variable */
+    --grayish-yellow: #F4AB45;
+    --light-black: #2c2e30;
+    --grayish-white: #E3E9EC;
+}
+
+/* General styles */
+
+body {
+    background-color:#E3E9EC;
+    background-image: url('../img/pattern-background-desktop.svg');
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 2em;
+}
+
+main h1{
+    text-align: center;
+}
+
+ .container {
+    border: 2px solid var(--ligh-black);
+    width: 375px;
+}
+
+
+/* Phone styling */
+.phone-case{
+    width: 300px;
+    height: 610px;
+    background-color: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+
+.phone {
+    width: 285px;
+    height: 595px;
+    background-color: #ffffff;
+    z-index: 1;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.phone-utils {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone .phone-body {
+    width: 260px;
+    background-color: black;
+    height: 490px;
+}
+
+.phone .phone-utils {
+    position: absolute;
+    top: 20px
+}
+
+.phone-utils .camera{
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.phone-utils .ear-piece {
+    width: 55px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: black;
+    margin-left: 1em;
+    position: relative;
+}
+
+.ear-piece::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #000000;
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    border-radius: 50%;
+}
+
+.phone .home-btn {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    bottom: 5px;
+    border: 3px solid silver;
+    backdrop-filter: blur(20px);
+}
+
+/* Phone styling ends here */
+
+/* Phone screen styling */
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background-color: var(--grayish-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.phone-header {
+    width: 100%;
+    height: 20px;
+    background-color: #cccccc;
+}
+
+/* Phone navbar */
+
+.phone-navbar {
+    background-color: #cccccc;
+    width: 100%;
+    height: 30px;
+}
+
+.phone-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.calc {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+/* .history{
+    width: 100%;
+    height: 100%;
+    background-color: #feea55;
+} */
+
+/* Calculator style */
+
+.calc {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(6, auto);
+    align-content: center;
+    justify-content: center;
+    padding-top: 2.4em;
+
+}
+
+.calc .btn-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 55px);
+    grid-template-rows: repeat(5, 55px);
+    row-gap: 8px;
+    column-gap: 8px;
+}
+
+button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    font-size: calc(25px);
+    background-color: #c5c5c5;;
+    cursor: pointer;
+    transition: opacity 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 400;
+}
+
+button:hover {
+    opacity: .7;
+}
+
+.zeroth {
+    grid-column: 1 / span 2;
+    border-radius: 30px;
+    text-align: left 5px;
+}
+
+.operator {
+    background-color: var(--grayish-yellow);
+    color: white;
+}
+
+.operator .show {
+    background-color: #ffffff;
+    color: var(--grayish-yellow);
+}
+
+.equal {
+    background-color: var(--grayish-yellow);
+    color: white;
+}
+
+.num-key {
+    background-color: var(--light-black);
+    color: white;
+}
+
+.time {
+    font-size:  12px;
+}
+
+.current-content {
+    font-size: 60px;
+    text-align: right;
+    color: #fff;
+}
